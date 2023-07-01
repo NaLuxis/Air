@@ -32,6 +32,7 @@ def print_correct(list_cutted: List[str]) -> str:
     for word in list_cutted:
         print(word)
 
+    exit()
 
 def incorrect_argument_count() -> None:
 
