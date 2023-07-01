@@ -1,28 +1,36 @@
 ############### Split ###############
 
-import sys, re
+import sys
 
 from typing import List
 
 ### Function ###
 
 def cutting_string(string_to_cut: str, separator: str) -> List[str]:
-    
-    string_list = []
 
+    string_list = []
     word = ""
 
     for char in string_to_cut:
 
-        if char == separator or string_to_cut[-1]:
-            pass
+        if char in separator:
+            
+            if word:
+                string_list.append(word)
+                word = ""
+        else:
+            word += char
 
-        if char != separator:
-            word.join(char)
-        
+    if word:
         string_list.append(word)
-        print(string_to_cut)
+    
+    return string_list
 
+
+def print_correct(list_cutted: List[str]) -> str:
+
+    for word in list_cutted:
+        print(word)
 
 
 def incorrect_argument_count() -> None:
@@ -73,8 +81,10 @@ string_to_cut = sys.argv[1]
 
 ### Problem solving ###
 
+cutted_string = cutting_string(string_to_cut, " \t\n")
 
+correct_sentence = print_correct(cutted_string)
 
 ### Result ###
 
-print()
+print(correct_sentence)
