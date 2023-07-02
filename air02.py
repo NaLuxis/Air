@@ -2,9 +2,26 @@
 
 import sys
 
+from typing import List
+
 ### Function ###
 
+def concat(list_to_concat: List[str], separator: str) -> str:
 
+    new_list = []
+
+    for element in list_to_concat:
+
+        if list_to_concat[-1] == element:
+            new_list.append(element)
+        else:
+            new_list.append(element)
+            new_list.append(separator)
+
+    for element in new_list:
+        concat_string = "".join(new_list)
+
+    return concat_string
 
 
 def incorrect_argument_count() -> None:
@@ -59,8 +76,8 @@ separator = sys.argv[-1]
 
 ### Problem solving ###
 
-
+concated_string = concat(list_to_concat, separator)
 
 ### Result ###
 
-print()
+print(concated_string)
