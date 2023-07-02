@@ -8,7 +8,14 @@ def read_my_file(my_file: str) -> None:
 
     try:
         with open(my_file, "r") as f:
-            return f.read()
+            content = f.read()
+
+            if not content:
+                print("The file is empty")
+                exit()
+            
+            if content:
+                return content
         
     except FileNotFoundError:
         print(f"File : {my_file} don't exist")
