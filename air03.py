@@ -25,7 +25,6 @@ def find_intruder(array_to_find: List[str | int]) -> str | int:
             return key
 
 
-
 def incorrect_argument_count() -> None:
 
     if len(sys.argv) <= 3:
@@ -36,7 +35,6 @@ def incorrect_argument_count() -> None:
 ### Error ###
 
 incorrect_argument_count()
-
 
 ### Parsing ###
 
