@@ -7,18 +7,35 @@ import sys
 def create_pyramide(char: str, stage: int) -> None:
 
     with open("pyramide.txt", mode="w") as f:
-        
+
         index = 0
-        # ↓↓↓ CODE DANGER ↓↓↓
-        # while index < stage:
+        number_char = 1
+
+        while index < stage:
             
-        #     space = stage - 1 + index
+            space_one = stage - 1 - index
+            space_two = stage - 1 + index
 
-        #     f.write(f"{space}{char}{space}")
+            if index < stage - 1:
+                f.write(" " * space_one + char * number_char + " " * space_two + "\n" )
+            else:
+                f.write(" " * space_one + char * number_char + " " * space_two)
+          
+            index += 1
+            number_char += 2
 
 
+def display_pyramide() -> None:
 
-   
+    with open("pyramide.txt", mode="r") as f:
+        content = f.read()
+
+        if not content:
+            print("The file is empty")
+            exit()
+        
+        if content:
+            return content
 
 
 def incorrect_argument_count() -> None:
@@ -57,6 +74,8 @@ pyramide_stage = int(sys.argv[2])
 
 created_pyramide = create_pyramide(pyramide_char, pyramide_stage)
 
+show_pyramide = display_pyramide()
+
 ### Result ###
 
-print(created_pyramide)
+print(show_pyramide)
