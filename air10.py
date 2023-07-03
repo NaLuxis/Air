@@ -4,7 +4,7 @@ import sys
 
 ### Function ###
 
-def read_my_file(my_file: str) -> None:
+def read_my_file(my_file: str) -> str | None:
 
     try:
         with open(my_file, "r") as f:
