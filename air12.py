@@ -19,6 +19,15 @@ def quick_sort(list_to_sort: List[str]) -> List[int]:
     return quick_sort(shorter) + [pivot] + quick_sort(greater)
 
 
+def print_correct(quick_list: List[int]) -> str:
+
+    for number in quick_list:
+        print(f"{number} ", end="")
+    
+    print("")
+    exit()
+
+
 def incorrect_argument_count() -> None:
 
     if len(sys.argv) <= 2:
@@ -43,6 +52,7 @@ def error_argument() -> None:
             print("Error")
             exit()
 
+
 ### Error ###
 
 error_argument()
@@ -55,6 +65,8 @@ list_to_quick_sort = sys.argv[1:]
 
 sorted_quick = quick_sort(list_to_quick_sort)
 
+correct_sentence = print_correct(sorted_quick)
+
 ### Result ###
 
-print(sorted_quick)
+print(correct_sentence)
