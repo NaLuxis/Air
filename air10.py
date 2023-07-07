@@ -11,14 +11,14 @@ def read_my_file(my_file: str) -> str | None:
             content = f.read()
 
             if not content:
-                print("The file is empty")
+                print("Error. The file is empty")
                 exit()
             
             if content:
                 return content
         
     except FileNotFoundError:
-        print(f"File : {my_file} don't exist")
+        print(f"Error. File : {my_file} don't exist")
         exit()
 
 
