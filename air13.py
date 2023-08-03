@@ -55,7 +55,6 @@ def air_tests() -> None:
 ### Parsing ###
 
 
-
 ### Problem solving ###
 
 tested = air_tests()
